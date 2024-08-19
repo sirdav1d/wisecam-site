@@ -45,7 +45,7 @@ export const Navbar2 = (props: Navbar2Props) => {
 				<div className='flex min-h-16 items-center justify-between px-[5%] md:min-h-18 lg:min-h-full lg:px-0'>
 					<a href={'/'}>
 						<Image
-							width={100}
+							width={140}
 							height={80}
 							src={logo}
 							alt={'logo'}
