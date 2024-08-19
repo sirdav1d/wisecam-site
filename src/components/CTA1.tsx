@@ -2,6 +2,7 @@
 
 import { Button } from '@relume_io/relume-ui';
 import type { ButtonProps } from '@relume_io/relume-ui';
+import Image from 'next/image';
 
 type ImageProps = {
 	src: string;
@@ -24,14 +25,14 @@ export const CTA1 = (props: Cta1Props) => {
 		...props,
 	} as Props;
 	return (
-		<section className='px-[5%] py-16 md:py-24 lg:py-28'>
+		<section className='px-[5%] py-16 md:py-24 lg:py-28 max-w-7xl'>
 			<div className='container'>
 				<div className='grid grid-cols-1 gap-x-20 gap-y-12 md:gap-y-16 lg:grid-cols-2 lg:items-center'>
 					<div>
-						<h2 className='mb-5 text-4xl font-bold md:mb-6 md:text-6xl'>
+						<h2 className='mb-5 text-3xl font-bold md:mb-6 md:text-5xl'>
 							{heading}
 						</h2>
-						<p className='md:text-md'>{description}</p>
+						<p className='md:text-md 2xl:text-lg'>{description}</p>
 						<div className='mt-6 flex gap-x-4 md:mt-8'>
 							{buttons.map((button, index) => (
 								<Button
@@ -43,10 +44,12 @@ export const CTA1 = (props: Cta1Props) => {
 						</div>
 					</div>
 					<div>
-						<img
+						<Image
+							width={600}
+							height={300}
 							src={image.src}
 							className='w-full object-cover'
-							alt={image.alt}
+							alt={'imagem de cta'}
 						/>
 					</div>
 				</div>

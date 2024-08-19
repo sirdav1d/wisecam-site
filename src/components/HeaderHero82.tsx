@@ -23,6 +23,7 @@ type ImageProps = {
 
 type Props = {
 	heading: string;
+	headlinespan: string;
 	description: string;
 	buttons: ButtonProps[];
 	video: string;
@@ -33,7 +34,7 @@ export type Header82Props = React.ComponentPropsWithoutRef<'section'> &
 	Partial<Props>;
 
 export const HeaderHero82 = (props: Header82Props) => {
-	const { heading, description, buttons, video, image } = {
+	const { heading, description, buttons, video, image, headlinespan } = {
 		...Header82Defaults,
 		...props,
 	} as Props;
@@ -68,12 +69,17 @@ export const HeaderHero82 = (props: Header82Props) => {
 			ref={transformRef}
 			className='relative flex h-[180vh] flex-col items-center'>
 			<div className='px-[5%]'>
-				<div className='sticky top-0 z-0 mx-auto flex min-h-[100vh] max-w-4xl items-center justify-center py-16 text-center md:py-24 lg:py-28'>
+				<div className='sticky top-0 z-0 mx-auto flex min-h-[100vh] max-w-6xl items-center justify-center py-16 text-center md:py-24 lg:py-28'>
 					<motion.div style={{ opacity: fadeOut, scale: scaleDown }}>
-						<h1 className='mb-5 text-4xl font-bold md:mb-6 md:text-7xl'>
+						<h1 className='mb-5 text-4xl font-bold md:mb-6 md:text-6xl'>
 							{heading}
+							<span className='2xl:bg-gradient-to-r md:text-5xl from-blue-600 to-orange-600 px-4 rounded-lg 2xl:text-zinc-50'>
+								{headlinespan}
+							</span>
 						</h1>
-						<p className='md:text-md'>{description}</p>
+						<p className='md:text-base 2xl:text-lg max-w-3xl mx-auto'>
+							{description}
+						</p>
 						<div className='mt-6 flex items-center justify-center gap-x-4 md:mt-8'>
 							{buttons.map((button, index) => (
 								<Button
