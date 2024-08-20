@@ -120,7 +120,7 @@ export const Footer4Defaults: Footer4Props = {
 	],
 	footerText: '© 2024 Iceberg Digital. Todos os Direitos Reservados.',
 	footerLinks: [
-		{ title: 'Plíticas de Privacidade', url: '#' },
-		{ title: 'Termos de Uso', url: '#' },
+		{ title: 'Políticas de Privacidade', url: '/politics' },
+		{ title: 'Termos de Uso', url: '/politics' },
 	],
 };
