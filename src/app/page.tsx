@@ -7,7 +7,6 @@ import { Feature493 } from '@/components/Feature493';
 import { Footer4 } from '@/components/Footer4';
 import { HeaderHero82 } from '@/components/HeaderHero82';
 import { Navbar2 } from '@/components/Navbar2';
-import logo from '@/assets/logo-wisecam.png';
 import { HomeQuery } from '@/lib/queries';
 import { fetchHygraph } from '@/lib/fetchHygraph';
 import { HomeType } from '@/lib/types';
@@ -16,8 +15,7 @@ export default async function Home() {
 	const response: HomeType = await fetchHygraph(HomeQuery);
 	const data = response.homepages[0];
 	return (
-		<main className='mx-auto w-full overflow-x-hidden flex flex-col items-center justify-center'>
-			<Navbar2 logo={logo} />
+		<main className='mx-auto w-full overflow-x-hidden flex flex-col items-center justify-center bg-zinc-50'>
 			<HeaderHero82
 				heading={data.headline}
 				headlinespan={data.headlinespan}

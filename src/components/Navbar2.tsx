@@ -2,18 +2,14 @@
 
 'use client';
 
+import logoImage from '@/assets/logo-wisecam.png';
 import type { ButtonProps } from '@relume_io/relume-ui';
 import { Button, useMediaQuery } from '@relume_io/relume-ui';
 import { motion } from 'framer-motion';
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 import { useState } from 'react';
+import { BiLogoWhatsapp } from 'react-icons/bi';
 import { RxChevronDown } from 'react-icons/rx';
-
-type ImageProps = {
-	url?: string;
-	src: string;
-	alt?: string;
-};
 
 type NavLink = {
 	url: string;
@@ -22,7 +18,6 @@ type NavLink = {
 };
 
 type Props = {
-	logo: StaticImageData;
 	navLinks: NavLink[];
 	buttons: ButtonProps[];
 };
@@ -31,7 +26,7 @@ export type Navbar2Props = React.ComponentPropsWithoutRef<'section'> &
 	Partial<Props>;
 
 export const Navbar2 = (props: Navbar2Props) => {
-	const { logo, navLinks, buttons } = {
+	const { navLinks, buttons } = {
 		...Navbar2Defaults,
 		...props,
 	} as Props;
@@ -40,28 +35,18 @@ export const Navbar2 = (props: Navbar2Props) => {
 	const isMobile = useMediaQuery('(max-width: 991px)');
 
 	return (
-		<nav className='flex  w-full py-4 items-center  bg-background-primary lg:min-h-18 lg:px-[5%]'>
+		<nav className='flex  w-full py-4 items-center  bg-zinc-50 lg:min-h-18 drop-shadow-lg'>
 			<div className='mx-auto max-w-7xl size-full lg:grid lg:grid-cols-[0.375fr_1fr_0.375fr] lg:items-center lg:justify-between lg:gap-4'>
 				<div className='flex min-h-16 items-center justify-between px-[5%] md:min-h-18 lg:min-h-full lg:px-0'>
 					<a href={'/'}>
 						<Image
-							width={140}
+							width={100}
 							height={80}
-							src={logo}
+							src={logoImage}
 							alt={'logo'}
 						/>
 					</a>
 					<div className='flex items-center gap-4 lg:hidden'>
-						<div>
-							{buttons.map((button, index) => (
-								<Button
-									key={index}
-									className='w-full px-4 py-1'
-									{...button}>
-									{button.title}
-								</Button>
-							))}
-						</div>
 						<button
 							className='-mr-2 flex size-12 flex-col items-center justify-center'
 							onClick={() => setIsMobileMenuOpen((prev) => !prev)}>
@@ -100,7 +85,7 @@ export const Navbar2 = (props: Navbar2Props) => {
 					{navLinks.map((navLink, index) => (
 						<div
 							key={index}
-							className='first:pt-4 lg:first:pt-0'>
+							className='first:pt-10 lg:first:pt-0 mt-5'>
 							{navLink.subMenuLinks && navLink.subMenuLinks.length > 0 ? (
 								<SubMenu
 									navLink={navLink}
@@ -109,22 +94,22 @@ export const Navbar2 = (props: Navbar2Props) => {
 							) : (
 								<a
 									href={navLink.url}
-									className='block py-3 text-md lg:px-4 lg:py-2 lg:text-base'>
+									className='block py-3 lg:px-4 lg:py-2 lg:text-base hover:text-orange-500 transition-all duration-300 ease-linear'>
 									{navLink.title}
 								</a>
 							)}
 						</div>
 					))}
+					<Button className='px-4 py-2 rounded-md bg-[#25D366] border-none shadow-shadow-wpp hover:opacity-80 transition-all duration-300 ease-linear drop-shadow lg:hidden mt-10'>
+						Whatsapp
+						<BiLogoWhatsapp size={28} />
+					</Button>
 				</motion.div>
 				<div className='hidden justify-self-end lg:block'>
-					{buttons.map((button, index) => (
-						<Button
-							key={index}
-							className='px-6 py-2'
-							{...button}>
-							{button.title}
-						</Button>
-					))}
+					<Button className='px-4 py-2 rounded-md bg-[#25D366] border-none shadow-shadow-wpp hover:opacity-80 transition-all duration-300 ease-linear drop-shadow'>
+						Whatsapp
+						<BiLogoWhatsapp size={28} />
+					</Button>
 				</div>
 			</div>
 		</nav>
@@ -164,10 +149,10 @@ const SubMenu = ({
 
 export const Navbar2Defaults: Navbar2Props = {
 	navLinks: [
-		{ title: 'Link One', url: '#' },
-		{ title: 'Link Two', url: '#' },
-		{ title: 'Link Three', url: '#' },
-		{ title: 'Link Four', url: '#' },
+		{ title: 'Home', url: '#home' },
+		{ title: 'Vantagens', url: '#vantagem' },
+		{ title: 'Soluções', url: '#solucoes' },
+		{ title: 'Contato', url: '#contato' },
 	],
 	buttons: [
 		{

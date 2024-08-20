@@ -35,10 +35,11 @@ export const Contact1 = (props: Contact1Props) => {
 	};
 
 	return (
-		<section className='px-[5%] py-16 md:py-24 lg:py-28'>
+		<section
+			id='contato'
+			className='px-[5%] py-16 md:py-24 lg:py-28'>
 			<div className='container max-w-lg'>
 				<div className='mx-auto mb-8 w-full max-w-lg text-center md:mb-10 lg:mb-12'>
-					<p className='mb-3 font-semibold md:mb-4'>{tagline}</p>
 					<h2 className='mb-5 text-4xl font-bold md:mb-6 md:text-6xl'>
 						{heading}
 					</h2>

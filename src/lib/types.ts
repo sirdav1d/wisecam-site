@@ -1,10 +1,10 @@
 /** @format */
 
 export type HomeType = {
-	homepages: Content[];
+	homepages: ContentHome[];
 };
 
-export type Content = {
+export type ContentHome = {
 	headline: string;
 	headlinespan: string;
 	subheadline: string;
@@ -32,6 +32,10 @@ export type hygraphSolucao = {
 	indexColumn: string;
 	description: string;
 	image: hygraphAsset;
+	verticalText: string;
+	horizontalText: string;
+	
+
 };
 
 export type hygraphArgumento = {
@@ -55,7 +59,14 @@ export type hygraphLottie = {
 	data: JSON;
 };
 
-export type NotFoundType = {};
+export type NotFoundType = {
+	erros: ContentError[];
+};
+
+export type ContentError = {
+	erroTitle: string;
+	erroLottie: hygraphLottie;
+};
 
 export type ThanksType = {};
 

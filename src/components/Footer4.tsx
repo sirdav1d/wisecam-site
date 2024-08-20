@@ -1,18 +1,14 @@
 /** @format */
 
 import { FaXTwitter } from 'react-icons/fa6';
+import logo from '@/assets/logo-wisecam.png';
 import {
 	BiLogoFacebookCircle,
 	BiLogoInstagram,
 	BiLogoLinkedinSquare,
 	BiLogoYoutube,
 } from 'react-icons/bi';
-
-type ImageProps = {
-	url?: string;
-	src: string;
-	alt?: string;
-};
+import Image from 'next/image';
 
 type Links = {
 	title: string;
@@ -34,7 +30,6 @@ type FooterLink = {
 };
 
 type Props = {
-	logo: ImageProps;
 	columnLinks: ColumnLinks[];
 	socialMediaLinks: SocialMediaLinks[];
 	footerText: string;
@@ -45,7 +40,7 @@ export type Footer4Props = React.ComponentPropsWithoutRef<'section'> &
 	Partial<Props>;
 
 export const Footer4 = (props: Footer4Props) => {
-	const { logo, footerText, columnLinks, footerLinks, socialMediaLinks } = {
+	const { footerText, columnLinks, footerLinks, socialMediaLinks } = {
 		...Footer4Defaults,
 		...props,
 	} as Props;
@@ -54,11 +49,13 @@ export const Footer4 = (props: Footer4Props) => {
 			<div className='container'>
 				<div className='grid grid-cols-1 items-center justify-center justify-items-center gap-x-[4vw] gap-y-12 pb-12 md:pb-18 lg:grid-cols-[0.25fr_1fr_0.25fr] lg:justify-between lg:gap-y-4 lg:pb-20'>
 					<a
-						href={logo.url}
+						href={'/'}
 						className='lg:justify-self-start'>
-						<img
-							src={logo.src}
-							alt={logo.alt}
+						<Image
+							width={120}
+							height={80}
+							src={logo}
+							alt={'Logo Wisecam'}
 							className='inline-block'
 						/>
 					</a>
@@ -69,7 +66,7 @@ export const Footer4 = (props: Footer4Props) => {
 							{column.links.map((link, linkIndex) => (
 								<li
 									key={linkIndex}
-									className='font-semibold'>
+									className='hover:text-orange-500 transition-all ease-linear duration-300'>
 									<a href={link.url}>{link.title}</a>
 								</li>
 							))}
@@ -104,19 +101,13 @@ export const Footer4 = (props: Footer4Props) => {
 };
 
 export const Footer4Defaults: Footer4Props = {
-	logo: {
-		url: '#',
-		src: 'https://relume-assets.s3.amazonaws.com/logo-image.svg',
-		alt: 'Logo image',
-	},
 	columnLinks: [
 		{
 			links: [
-				{ title: 'Link One', url: '#' },
-				{ title: 'Link Two', url: '#' },
-				{ title: 'Link Three', url: '#' },
-				{ title: 'Link Four', url: '#' },
-				{ title: 'Link Five', url: '#' },
+				{ title: 'Home', url: '#home' },
+				{ title: 'Vantagens', url: '#vantagem' },
+				{ title: 'Soluções', url: '#solucoes' },
+				{ title: 'Contato', url: '#contato' },
 			],
 		},
 	],
@@ -127,10 +118,9 @@ export const Footer4Defaults: Footer4Props = {
 		{ url: '#', icon: <BiLogoLinkedinSquare className='size-6' /> },
 		{ url: '#', icon: <BiLogoYoutube className='size-6' /> },
 	],
-	footerText: '© 2024 Relume. All rights reserved.',
+	footerText: '© 2024 Iceberg Digital. Todos os Direitos Reservados.',
 	footerLinks: [
-		{ title: 'Privacy Policy', url: '#' },
-		{ title: 'Terms of Service', url: '#' },
-		{ title: 'Cookies Settings', url: '#' },
+		{ title: 'Plíticas de Privacidade', url: '#' },
+		{ title: 'Termos de Uso', url: '#' },
 	],
 };

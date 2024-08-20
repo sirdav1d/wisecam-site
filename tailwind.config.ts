@@ -1,4 +1,6 @@
-import type { Config } from "tailwindcss";
+/** @format */
+
+import type { Config } from 'tailwindcss';
 
 const config: Config = {
 	content: [
@@ -13,6 +15,12 @@ const config: Config = {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
 				'gradient-conic':
 					'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+			},
+			boxShadow: {
+				'shadow-wpp':
+					'0px 34px 14px rgba(37, 211, 102, 0.01), 0px 19px 11px rgba(37, 211, 102, 0.05), 0px 9px 9px rgba(37, 211, 102, 0.09), 0px 2px 5px rgba(37, 211, 102, 0.1)',
+				'hero-btn':
+					'0px 36px 14px rgba(41, 84, 224, 0.04), 0px 20px 12px rgba(41, 84, 224, 0.13), 0px 9px 9px rgba(41, 84, 224, 0.21), 0px 2px 5px rgba(41, 84, 224, 0.25)',
 			},
 		},
 	},

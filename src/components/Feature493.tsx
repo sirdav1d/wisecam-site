@@ -9,6 +9,7 @@ import clsx from 'clsx';
 import { AnimatePresence, motion } from 'framer-motion';
 import Image from 'next/image';
 import { useState } from 'react';
+import { LuArrowUpRight } from 'react-icons/lu';
 import { RxChevronRight } from 'react-icons/rx';
 
 type ImageProps = {
@@ -35,18 +36,18 @@ export const Feature493 = (props: Layout493Props) => {
 	const [activeTab, setActiveTab] = useState(0);
 
 	return (
-		<section className='px-[5%] md:px-0 py-16 md:py-24 lg:py-28 max-w-7xl '>
+		<section id='vantagem' className='px-[5%] 2xl:px-0 py-16 md:py-24 lg:py-28 2xl:max-w-7xl w-full mx-auto'>
 			<div className='container'>
 				<div className='relative'>
 					<div className='w-full pr-0 md:w-1/2 md:pr-6'>
 						<div className='mb-8 w-full md:w-auto'>
-							<p className='mb-3 font-semibold md:mb-4 text-orange-500'>
+							<p className='mb-3 font-semibold md:mb-4 text-orange-500 border px-3 w-fit border-orange-400 rounded-full'>
 								{tagline}
 							</p>
 							<h2 className='mb-5 text-3xl font-bold md:mb-6 md:text-5xl '>
 								{heading}
 							</h2>
-							<p className='md:text-md'>{description}</p>
+							<p className='md:text-base'>{description}</p>
 						</div>
 						<div className='static flex flex-col flex-wrap justify-stretch md:block '>
 							<div className='relative mb-8 grid auto-cols-fr grid-cols-1 grid-rows-[auto_auto] items-start md:mb-0 md:items-stretch'>
@@ -104,13 +105,10 @@ export const Feature493 = (props: Layout493Props) => {
 								})}
 							</AnimatePresence>
 							<div className='mt-6 flex items-center gap-x-4 md:mt-8'>
-								{buttons.map((button, index) => (
-									<Button
-										key={index}
-										{...button}>
-										{button.title}
-									</Button>
-								))}
+								<Button className='rounded-md text-base shadow-hero-btn hover:bg-blue-500 transition-all ease-linear duration-300 bg-blue-600 border-none text-zinc-50'>
+									Contratar Agora
+									<LuArrowUpRight size={24} />
+								</Button>
 							</div>
 						</div>
 					</div>

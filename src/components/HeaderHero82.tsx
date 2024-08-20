@@ -15,6 +15,7 @@ import {
 	DialogOverlay,
 } from '@relume_io/relume-ui';
 import Image from 'next/image';
+import { LuArrowUpRight } from 'react-icons/lu';
 
 type ImageProps = {
 	src: string;
@@ -50,7 +51,7 @@ export const HeaderHero82 = (props: Header82Props) => {
 	const halfViewportHeight =
 		typeof window !== 'undefined' ? window.innerHeight * 0.5 : 100;
 	const fadeOut = useTransform(scrollY, [0, halfViewportHeight], [1, 0]);
-	const scaleDown = useTransform(scrollY, [0, halfViewportHeight], [1, 0.95]);
+	const scaleDown = useTransform(scrollY, [0, halfViewportHeight], [1, 1.1]);
 
 	const width = useTransform(
 		animatedScrollYProgress,
@@ -66,28 +67,25 @@ export const HeaderHero82 = (props: Header82Props) => {
 
 	return (
 		<section
+			id='home'
 			ref={transformRef}
 			className='relative flex h-[180vh] flex-col items-center'>
 			<div className='px-[5%]'>
-				<div className='sticky top-0 z-0 mx-auto flex min-h-[100vh] max-w-6xl items-center justify-center py-16 text-center md:py-24 lg:py-28'>
+				<div className='sticky top-0 z-0 mx-auto flex min-h-[100vh] max-w-6xl  md:justify-center py-16 md:text-center md:py-24 lg:py-28'>
 					<motion.div style={{ opacity: fadeOut, scale: scaleDown }}>
-						<h1 className='mb-5 text-4xl font-bold md:mb-6 md:text-6xl'>
+						<h1 className='mb-5 text-4xl font-bold md:mb-6 md:text-6xl mt-20 2xl:mt-28'>
 							{heading}
-							<span className='2xl:bg-gradient-to-r md:text-5xl from-blue-600 to-orange-600 px-4 rounded-lg 2xl:text-zinc-50'>
+							<span className='lg:bg-gradient-to-r md:text-5xl from-blue-600 to-orange-600 px-4 rounded-lg 2xl:text-zinc-50'>
 								{headlinespan}
 							</span>
 						</h1>
 						<p className='md:text-base 2xl:text-lg max-w-3xl mx-auto'>
 							{description}
 						</p>
-						<div className='mt-6 flex items-center justify-center gap-x-4 md:mt-8'>
-							{buttons.map((button, index) => (
-								<Button
-									key={index}
-									{...button}>
-									{button.title}
-								</Button>
-							))}
+						<div className='mt-6 flex md:items-center md:justify-center gap-x-4 md:mt-8'>
+							<Button className='rounded-md text-xl shadow-hero-btn bg-blue-600 border-none text-zinc-50 hover:bg-blue-500 transition-all ease-linear duration-300'>
+								Solicitar Orçamento <LuArrowUpRight size={32} />
+							</Button>
 						</div>
 					</motion.div>
 				</div>

@@ -37,6 +37,8 @@ export const HomeQuery = `query MyQuery {
         id
         description
         title
+        verticalText
+        horizontalText
         indexColumn
         image {
           url
