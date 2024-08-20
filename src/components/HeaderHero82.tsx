@@ -82,7 +82,7 @@ export const HeaderHero82 = (props: Header82Props) => {
 						<p className='md:text-base 2xl:text-lg max-w-3xl mx-auto'>
 							{description}
 						</p>
-						<div className='mt-6 flex md:items-center md:justify-center gap-x-4 md:mt-8'>
+						<div className='mt-6 flex md:items-center md:justify-center gap-x-4 md:mt-8 2xl:mt-12'>
 							<Button className='rounded-md text-xl shadow-hero-btn bg-blue-600 border-none text-zinc-50 hover:bg-blue-500 transition-all ease-linear duration-300'>
 								Solicitar Orçamento <LuArrowUpRight size={32} />
 							</Button>
