@@ -36,7 +36,9 @@ export const Feature493 = (props: Layout493Props) => {
 	const [activeTab, setActiveTab] = useState(0);
 
 	return (
-		<section id='vantagem' className='px-[5%] 2xl:px-0 py-16 md:py-24 lg:py-28 2xl:max-w-7xl w-full mx-auto'>
+		<section
+			id='vantagem'
+			className='px-[5%] 2xl:px-0 py-16 md:py-24 lg:py-28 2xl:max-w-7xl w-full mx-auto'>
 			<div className='container'>
 				<div className='relative'>
 					<div className='w-full pr-0 md:w-1/2 md:pr-6'>
@@ -56,7 +58,7 @@ export const Feature493 = (props: Layout493Props) => {
 										key={index}
 										onClick={() => setActiveTab(index)}
 										className={clsx(
-											'cursor-pointer border-b border-border-primary py-4',
+											'cursor-pointer border-b border-zinc-800/50 py-4',
 											{
 												'opacity-100': activeTab === index,
 												'opacity-25': activeTab !== index,
