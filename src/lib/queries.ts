@@ -72,9 +72,11 @@ export const NotFoundQuery = `query MyQuery {
 
 export const PoliticsQuery = `query MyQuery {
   politicas {
-    politicaTilte
-    politicaDescription
-    termosTitle
-    termosDescription
+    politics {
+      raw
+    }
+    terms {
+      raw
+    }
   }
 }`;

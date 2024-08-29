@@ -6,9 +6,8 @@ import { Feature351 } from '@/components/Feature351';
 import { Feature493 } from '@/components/Feature493';
 import { Footer4 } from '@/components/Footer4';
 import { HeaderHero82 } from '@/components/HeaderHero82';
-import { Navbar2 } from '@/components/Navbar2';
-import { HomeQuery } from '@/lib/queries';
 import { fetchHygraph } from '@/lib/fetchHygraph';
+import { HomeQuery } from '@/lib/queries';
 import { HomeType } from '@/lib/types';
 
 export default async function Home() {
@@ -44,7 +43,7 @@ export default async function Home() {
 			/>
 
 			<Contact1 />
-			<Footer4 />
+		
 		</main>
 	);
 }

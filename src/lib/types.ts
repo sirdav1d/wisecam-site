@@ -1,5 +1,7 @@
 /** @format */
 
+import { RichTextContent } from '@graphcms/rich-text-types';
+
 export type HomeType = {
 	homepages: ContentHome[];
 };
@@ -34,8 +36,6 @@ export type hygraphSolucao = {
 	image: hygraphAsset;
 	verticalText: string;
 	horizontalText: string;
-	
-
 };
 
 export type hygraphArgumento = {
@@ -70,4 +70,15 @@ export type ContentError = {
 
 export type ThanksType = {};
 
-export type PoliticsType = {};
+export type PoliticsType = {
+	politicas: ContentPoliticsType[];
+};
+
+export type ContentPoliticsType = {
+	politics: HtmlType;
+	terms: HtmlType;
+};
+
+export type HtmlType = {
+	raw: RichTextContent;
+};
