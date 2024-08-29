@@ -30,18 +30,19 @@ export default async function Home() {
 				tabs={data.vantagem}
 				buttons={[{ title: data.ctavantagem }]}
 			/>
-			<Feature351
-				tagline='Soluções'
-				heading={data.titlesolucoes}
-				description={data.desciptionsolucoes}
-				features={data.solucao}
-			/>
 			<CTA1
 				heading={data.ctasectiontitle}
 				description={data.ctasectiondescription}
 				buttons={[{ title: data.ctasectionbtn }]}
 				image={{ src: data.ctasectionimage.url }}
 			/>
+			<Feature351
+				tagline='Soluções'
+				heading={data.titlesolucoes}
+				description={data.desciptionsolucoes}
+				features={data.solucao}
+			/>
+
 			<Contact1 />
 			<Footer4 />
 		</main>

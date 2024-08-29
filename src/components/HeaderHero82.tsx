@@ -16,6 +16,7 @@ import {
 } from '@relume_io/relume-ui';
 import Image from 'next/image';
 import { LuArrowUpRight } from 'react-icons/lu';
+import capa from '@/../public/capa-do-video.png'
 
 type ImageProps = {
 	src: string;
@@ -96,7 +97,7 @@ export const HeaderHero82 = (props: Header82Props) => {
 				<Dialog>
 					<DialogTrigger className='relative flex size-full items-center justify-center'>
 						<Image
-							src={image.src}
+							src={capa}
 							width={1200}
 							height={400}
 							className='size-full object-cover'

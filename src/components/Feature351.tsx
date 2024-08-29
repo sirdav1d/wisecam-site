@@ -43,7 +43,9 @@ export const Feature351 = (props: Layout351Props) => {
 	};
 
 	return (
-		<section id='solucoes' className='px-[5%] 2xl:px-0 py-16 md:py-24 lg:py-28 2xl:max-w-7xl w-full'>
+		<section
+			id='solucoes'
+			className='px-[5%] 2xl:px-0 py-16 md:py-24 lg:py-28 2xl:max-w-7xl w-full'>
 			<div className='container'>
 				<div className='mb-12 w-full max-w-2xl md:mb-18 lg:mb-20'>
 					<p className='mb-3 font-semibold  md:mb-4 text-orange-500 border px-3 w-fit border-orange-400 rounded-full'>
@@ -86,9 +88,11 @@ const FeatureCard = ({
 			transition={{ duration: 0.3, ease: 'easeInOut' }}>
 			<div
 				className={`${
-					isActive ? 'bg-blue-600/20 ' : ''
-				} hover:bg-blue-600/20 transition-all ease-linear duration-300 relative flex h-16 w-full min-w-full cursor-pointer items-center justify-center border-t border-border-primary py-8 md:h-20 lg:h-[80vh] lg:w-20 lg:min-w-20 lg:flex-col lg:justify-between lg:border-none`}>
-				<p className='text-blue-600 absolute left-6 whitespace-nowrap text-xl font-bold md:left-10 md:text-2xl lg:relative lg:left-0'>
+					isActive
+						? ' bg-gradient-to-b from-blue-950 to-blue-900 text-zinc-100 '
+						: ''
+				} hover:bg-blue-950 hover:text-zinc-100 transition-all ease-linear duration-300 relative flex h-16 w-full min-w-full cursor-pointer items-center justify-center border-t border-zinc-500/20 py-8 md:h-20 lg:h-[80vh] lg:w-20 lg:min-w-20 lg:flex-col lg:justify-between  border rounded-lg`}>
+				<p className='absolute left-6 whitespace-nowrap text-xl font-bold md:left-10 md:text-2xl lg:relative lg:left-0'>
 					{feature.indexColumn}
 				</p>
 				<h2 className='hidden [writing-mode:vertical-rl] lg:mx-auto lg:block lg:rotate-180 lg:text-2xl lg:font-bold'>
@@ -117,7 +121,7 @@ const FeatureCard = ({
 							height={400}
 							src={feature.image.url}
 							alt={feature.title}
-							className='size-full object-cover'
+							className='size-full object-contain md:object-cover'
 						/>
 					</div>
 				</div>
