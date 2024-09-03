@@ -42,8 +42,10 @@ export default async function Home() {
 				features={data.solucao}
 			/>
 
-			<Contact1 />
-		
+			<Contact1
+				heading='Entre Em Contato'
+				description='Tem uma pergunta ou quer começar um projeto conosco? Não hesite em nos contatar. Estamos à disposição para atender suas necessidades'
+			/>
 		</main>
 	);
 }

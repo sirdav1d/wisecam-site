@@ -68,7 +68,15 @@ export type ContentError = {
 	erroLottie: hygraphLottie;
 };
 
-export type ThanksType = {};
+export type ThanksType = {
+	obrigados: ThanksTypeContent[];
+};
+
+export type ThanksTypeContent = {
+	headline: string;
+	subheadline: string;
+	lottie: hygraphLottie;
+};
 
 export type PoliticsType = {
 	politicas: ContentPoliticsType[];

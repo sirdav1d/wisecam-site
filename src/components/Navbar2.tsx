@@ -10,6 +10,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { BiLogoWhatsapp } from 'react-icons/bi';
 import { RxChevronDown } from 'react-icons/rx';
+import { usePathname } from 'next/navigation';
 
 type NavLink = {
 	url: string;
@@ -33,11 +34,18 @@ export const Navbar2 = (props: Navbar2Props) => {
 
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 	const isMobile = useMediaQuery('(max-width: 991px)');
+	const path = usePathname();
 
 	return (
 		<nav className='flex  w-full py-4 items-center  bg-zinc-50 lg:min-h-18 drop-shadow-lg'>
-			<div className='mx-auto max-w-7xl size-full lg:grid lg:grid-cols-[0.375fr_1fr_0.375fr] lg:items-center lg:justify-between lg:gap-4'>
-				<div className='flex min-h-16 items-center justify-between px-[5%] md:min-h-18 lg:min-h-full lg:px-0'>
+			<div
+				className={`mx-auto max-w-7xl size-full flex  items-center ${
+					path == '/' ? 'lg:justify-between' : 'justify-center'
+				}  lg:gap-4`}>
+				<div
+					className={`flex min-h-16 items-center ${
+						path == '/' ? 'justify-between' : 'justify-center'
+					}  px-[5%] md:min-h-18 lg:min-h-full lg:px-0`}>
 					<a href={'/'}>
 						<Image
 							width={100}
@@ -46,71 +54,81 @@ export const Navbar2 = (props: Navbar2Props) => {
 							alt={'logo'}
 						/>
 					</a>
-					<div className='flex items-center gap-4 lg:hidden'>
-						<button
-							className='-mr-2 flex size-12 flex-col items-center justify-center'
-							onClick={() => setIsMobileMenuOpen((prev) => !prev)}>
-							<motion.span
-								className='my-[3px] h-0.5 w-6 bg-black'
-								animate={isMobileMenuOpen ? ['open', 'rotatePhase'] : 'closed'}
-								variants={topLineVariants}
-							/>
-							<motion.span
-								className='my-[3px] h-0.5 w-6 bg-black'
-								animate={isMobileMenuOpen ? 'open' : 'closed'}
-								variants={middleLineVariants}
-							/>
-							<motion.span
-								className='my-[3px] h-0.5 w-6 bg-black'
-								animate={isMobileMenuOpen ? ['open', 'rotatePhase'] : 'closed'}
-								variants={bottomLineVariants}
-							/>
-						</button>
-					</div>
-				</div>
-				<motion.div
-					variants={{
-						open: {
-							height: 'var(--height-open, 100dvh)',
-						},
-						close: {
-							height: 'var(--height-closed, 0)',
-						},
-					}}
-					animate={isMobileMenuOpen ? 'open' : 'close'}
-					initial='close'
-					exit='close'
-					transition={{ duration: 0.4 }}
-					className='overflow-hidden px-[5%] text-center lg:flex lg:items-center lg:justify-center lg:px-0 lg:[--height-closed:auto] lg:[--height-open:auto]'>
-					{navLinks.map((navLink, index) => (
-						<div
-							key={index}
-							className='first:pt-10 lg:first:pt-0 mt-5'>
-							{navLink.subMenuLinks && navLink.subMenuLinks.length > 0 ? (
-								<SubMenu
-									navLink={navLink}
-									isMobile={isMobile}
+					{path == '/' ? (
+						<div className='flex items-center gap-4 lg:hidden'>
+							<button
+								className='-mr-2 flex size-12 flex-col items-center justify-center'
+								onClick={() => setIsMobileMenuOpen((prev) => !prev)}>
+								<motion.span
+									className='my-[3px] h-0.5 w-6 bg-black'
+									animate={
+										isMobileMenuOpen ? ['open', 'rotatePhase'] : 'closed'
+									}
+									variants={topLineVariants}
 								/>
-							) : (
-								<a
-									href={navLink.url}
-									className='block py-3 lg:px-4 lg:py-2 lg:text-base hover:text-orange-500 transition-all duration-300 ease-linear'>
-									{navLink.title}
-								</a>
-							)}
+								<motion.span
+									className='my-[3px] h-0.5 w-6 bg-black'
+									animate={isMobileMenuOpen ? 'open' : 'closed'}
+									variants={middleLineVariants}
+								/>
+								<motion.span
+									className='my-[3px] h-0.5 w-6 bg-black'
+									animate={
+										isMobileMenuOpen ? ['open', 'rotatePhase'] : 'closed'
+									}
+									variants={bottomLineVariants}
+								/>
+							</button>
 						</div>
-					))}
-					<Button className='px-4 py-2 rounded-md bg-[#25D366] border-none shadow-shadow-wpp hover:opacity-80 transition-all duration-300 ease-linear drop-shadow lg:hidden mt-10'>
-						Whatsapp
-						<BiLogoWhatsapp size={28} />
-					</Button>
-				</motion.div>
-				<div className='hidden justify-self-end lg:block'>
-					<Button className='px-4 py-2 rounded-md bg-[#25D366] border-none shadow-shadow-wpp hover:opacity-80 transition-all duration-300 ease-linear drop-shadow'>
-						Whatsapp
-						<BiLogoWhatsapp size={28} />
-					</Button>
+					) : null}
 				</div>
+				{path == '/' ? (
+					<>
+						<motion.div
+							variants={{
+								open: {
+									height: 'var(--height-open, 100dvh)',
+								},
+								close: {
+									height: 'var(--height-closed, 0)',
+								},
+							}}
+							animate={isMobileMenuOpen ? 'open' : 'close'}
+							initial='close'
+							exit='close'
+							transition={{ duration: 0.4 }}
+							className='overflow-hidden px-[5%] text-center lg:flex lg:items-center lg:justify-center lg:px-0 lg:[--height-closed:auto] lg:[--height-open:auto]'>
+							{navLinks.map((navLink, index) => (
+								<div
+									key={index}
+									className='first:pt-10 lg:first:pt-0 mt-5'>
+									{navLink.subMenuLinks && navLink.subMenuLinks.length > 0 ? (
+										<SubMenu
+											navLink={navLink}
+											isMobile={isMobile}
+										/>
+									) : (
+										<a
+											href={navLink.url}
+											className='block py-3 lg:px-4 lg:py-2 lg:text-base hover:text-orange-500 transition-all duration-300 ease-linear'>
+											{navLink.title}
+										</a>
+									)}
+								</div>
+							))}
+							<Button className='px-4 py-2 rounded-md bg-[#25D366] border-none shadow-shadow-wpp hover:opacity-80 transition-all duration-300 ease-linear drop-shadow lg:hidden mt-10'>
+								Whatsapp
+								<BiLogoWhatsapp size={28} />
+							</Button>
+						</motion.div>
+						<div className='hidden justify-self-end lg:block'>
+							<Button className='px-4 py-2 rounded-md bg-[#25D366] border-none shadow-shadow-wpp hover:opacity-80 transition-all duration-300 ease-linear drop-shadow'>
+								Whatsapp
+								<BiLogoWhatsapp size={28} />
+							</Button>
+						</div>
+					</>
+				) : null}
 			</div>
 		</nav>
 	);
