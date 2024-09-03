@@ -39,11 +39,11 @@ export const Navbar2 = (props: Navbar2Props) => {
 	return (
 		<nav className='flex  w-full py-4 items-center  bg-zinc-50 lg:min-h-18 drop-shadow-lg'>
 			<div
-				className={`mx-auto max-w-7xl size-full flex  items-center ${
+				className={`mx-auto max-w-7xl size-full flex  items-center flex-col w-full ${
 					path == '/' ? 'lg:justify-between' : 'justify-center'
 				}  lg:gap-4`}>
 				<div
-					className={`flex min-h-16 items-center ${
+					className={`flex min-h-16 items-center w-full ${
 						path == '/' ? 'justify-between' : 'justify-center'
 					}  px-[5%] md:min-h-18 lg:min-h-full lg:px-0`}>
 					<a href={'/'}>
