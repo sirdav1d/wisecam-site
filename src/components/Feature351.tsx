@@ -115,13 +115,13 @@ const FeatureCard = ({
 					<p className='text-base max-w-lg text-center mx-auto'>
 						{feature.description}
 					</p>
-					<div className='mt-8 h-80 md:mt-10 md:h-[25rem] lg:mt-12'>
+					<div className='mt-8 md:mt-10 lg:mt-12 rounded-md'>
 						<Image
-							width={1000}
+							width={800}
 							height={400}
 							src={feature.image.url}
 							alt={feature.title}
-							className='size-full object-contain md:object-cover'
+							className='object-cover rounded-md'
 						/>
 					</div>
 				</div>

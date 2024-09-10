@@ -75,7 +75,7 @@ export const Feature493 = (props: Layout493Props) => {
 											}}
 											transition={{ duration: 0.3, ease: 'easeInOut' }}
 											className='overflow-hidden'>
-											<p className='mt-2'>{tab.description}</p>
+											<p className='mt-2 text-base'>{tab.description}</p>
 										</motion.div>
 									</div>
 								))}
@@ -92,14 +92,14 @@ export const Feature493 = (props: Layout493Props) => {
 											exit={{ opacity: 0 }}
 											animate={{ opacity: 1 }}
 											transition={{ duration: 0.2 }}
-											className='relative bottom-0 left-auto right-0 top-0 flex h-full w-full items-center justify-center md:absolute md:w-1/2 md:pl-6 lg:pl-10'>
+											className='relative bottom-0 left-auto right-0 top-0 flex h-full w-full items-center justify-center md:absolute md:w-1/2 md:pl-6 lg:pl-10 rounded-md'>
 											{tab.image && (
 												<Image
-													width={600}
-													height={500}
+													width={500}
+													height={400}
 													src={tab.image.url}
 													alt={tab.title}
-													className='size-full object-cover'
+													className='object-cover rounded-md'
 												/>
 											)}
 										</motion.div>
