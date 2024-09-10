@@ -11,7 +11,7 @@ export default async function Politics() {
 	const data = response.politicas[0];
 
 	return (
-		<main className='h-full w-full max-w-7xl mx-auto my-20 px-4'>
+		<main className='h-full w-full max-w-7xl mx-auto my-20 px-4 xl:px-10'>
 			<div className=''>
 				<RichText content={data.politics.raw}></RichText>
 			</div>
