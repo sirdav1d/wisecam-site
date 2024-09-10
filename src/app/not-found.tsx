@@ -14,13 +14,12 @@ export default async function NotFound() {
 	return (
 		<main>
 			<div className='w-full h-screen justify-center items-center text-center flex gap-5 flex-col'>
-				<h2 className='font-bold text-4xl md:text-6xl'>{data.erroTitle}</h2>
-				<LottieComponent data={data.erroLottie} />
-				<Link
-					href={'/'}
-					className=''>
-					Voltar Para Home
-				</Link>
+				<h2 className='font-bold text-4xl xl:text-6xl px-4 xl:px-10'>
+					{data.erroTitle}
+				</h2>
+				<div className='xl:w-1/4'>
+					<LottieComponent data={data.erroLottie} />
+				</div>
 			</div>
 		</main>
 	);
