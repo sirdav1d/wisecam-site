@@ -37,7 +37,7 @@ export const Navbar2 = (props: Navbar2Props) => {
 	const path = usePathname();
 
 	return (
-		<nav className='flex  w-full py-4 items-center  bg-zinc-50 lg:min-h-18 drop-shadow-lg'>
+		<nav className='flex  w-full py-4 items-center  bg-zinc-100 backdrop-blur-sm lg:min-h-18 drop-shadow-lg z-50'>
 			<div
 				className={`mx-auto max-w-7xl size-full flex  w-full items-center flex-col md:flex-row ${
 					path == '/' ? 'lg:justify-between' : 'justify-center'
@@ -101,7 +101,7 @@ export const Navbar2 = (props: Navbar2Props) => {
 							{navLinks.map((navLink, index) => (
 								<div
 									key={index}
-									className='first:pt-10 lg:first:pt-0 mt-5'>
+									className='first:pt-10 lg:first:pt-0 '>
 									{navLink.subMenuLinks && navLink.subMenuLinks.length > 0 ? (
 										<SubMenu
 											navLink={navLink}
@@ -110,7 +110,7 @@ export const Navbar2 = (props: Navbar2Props) => {
 									) : (
 										<a
 											href={navLink.url}
-											className='block py-3 lg:px-4 lg:py-2 lg:text-base hover:text-orange-500 transition-all duration-300 ease-linear'>
+											className='block py-3 lg:px-4 lg:py-2 lg:text-lg hover:text-orange-500 transition-all duration-300 ease-linear'>
 											{navLink.title}
 										</a>
 									)}

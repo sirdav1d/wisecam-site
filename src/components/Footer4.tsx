@@ -45,7 +45,7 @@ export const Footer4 = (props: Footer4Props) => {
 		...props,
 	} as Props;
 	return (
-		<footer className='px-[5%] py-12 md:py-18 lg:py-20 w-full mx-auto bg-zinc-50'>
+		<footer className='px-[5%] py-12 md:py-18 lg:py-20 w-full mx-auto bg-gradient-to-r from-blue-900 to-blue-950  text-zinc-50'>
 			<div className='container max-w-7xl mx-auto'>
 				<div className='grid grid-cols-1 items-center justify-center justify-items-center gap-x-[4vw] gap-y-12 pb-12 md:pb-18 lg:grid-cols-[0.25fr_1fr_0.25fr] lg:justify-between lg:gap-y-4 lg:pb-20'>
 					<a
@@ -56,7 +56,7 @@ export const Footer4 = (props: Footer4Props) => {
 							height={80}
 							src={logo}
 							alt={'Logo Wisecam'}
-							className='inline-block'
+							className='inline-block grayscale'
 						/>
 					</a>
 					{columnLinks.map((column, index) => (
@@ -82,14 +82,14 @@ export const Footer4 = (props: Footer4Props) => {
 						))}
 					</div>
 				</div>
-				<div className='h-px w-full bg-zinc-600/20' />
+				<div className='h-px w-full bg-zinc-50/20' />
 				<div className='flex flex-col-reverse items-center justify-center justify-items-center pb-4 pt-6 text-sm md:flex-row md:gap-x-6 md:pb-0 md:pt-8 font-light'>
 					<p className='mt-8 md:mt-0'>{footerText}</p>
 					<ul className='grid grid-flow-row grid-cols-[max-content] items-center justify-center justify-items-center gap-x-0 gap-y-4 text-sm md:grid-flow-col md:gap-x-6 md:gap-y-0'>
 						{footerLinks.map((link, index) => (
 							<li
 								key={index}
-								className='underline decoration-black underline-offset-1 '>
+								className='underline hover:text-orange-500 underline-offset-1 transition-all duration-200 ease-linear'>
 								<a href={link.url}>{link.title}</a>
 							</li>
 						))}
@@ -112,11 +112,30 @@ export const Footer4Defaults: Footer4Props = {
 		},
 	],
 	socialMediaLinks: [
-		{ url: '#', icon: <BiLogoFacebookCircle className='size-6' /> },
-		{ url: '#', icon: <BiLogoInstagram className='size-6' /> },
-		{ url: '#', icon: <FaXTwitter className='size-6 p-0.5' /> },
-		{ url: '#', icon: <BiLogoLinkedinSquare className='size-6' /> },
-		{ url: '#', icon: <BiLogoYoutube className='size-6' /> },
+		{
+			url: '#',
+			icon: (
+				<BiLogoFacebookCircle className='size-8 hover:text-orange-500 transition-all duration-200 ease-linear' />
+			),
+		},
+		{
+			url: '#',
+			icon: (
+				<BiLogoInstagram className='size-8 hover:text-orange-500 transition-all duration-200 ease-linear' />
+			),
+		},
+		{
+			url: '#',
+			icon: (
+				<BiLogoLinkedinSquare className='size-8 hover:text-orange-500 transition-all duration-200 ease-linear' />
+			),
+		},
+		{
+			url: '#',
+			icon: (
+				<BiLogoYoutube className='size-8 hover:text-orange-500 transition-all duration-200 ease-linear' />
+			),
+		},
 	],
 	footerText: '© 2024 Iceberg Digital. Todos os Direitos Reservados.',
 	footerLinks: [

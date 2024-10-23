@@ -16,7 +16,8 @@ import {
 } from '@relume_io/relume-ui';
 import Image from 'next/image';
 import { LuArrowUpRight } from 'react-icons/lu';
-import capa from '@/../public/capa-do-video.png'
+import capa from '@/../public/capa-do-video.png';
+import { Navbar2 } from './Navbar2';
 
 type ImageProps = {
 	src: string;
@@ -73,7 +74,9 @@ export const HeaderHero82 = (props: Header82Props) => {
 			className='relative flex h-[180vh] flex-col items-center'>
 			<div className='px-[5%]'>
 				<div className='sticky top-0 z-0 mx-auto flex min-h-[100vh] max-w-6xl  md:justify-center py-16 md:text-center md:py-24 lg:py-28'>
-					<motion.div style={{ opacity: fadeOut, scale: scaleDown }}>
+					<motion.div
+						style={{ opacity: fadeOut, scale: scaleDown }}
+						className=' bg-zinc-50/60 backdrop-blur-sm rounded h-fit w-fit pb-10'>
 						<h1 className='mb-5 text-4xl font-bold md:mb-6 md:text-6xl mt-20 2xl:mt-28'>
 							{heading}
 							<span className='lg:bg-gradient-to-r md:text-5xl from-blue-600 to-orange-600 px-4 rounded-lg 2xl:text-zinc-50'>
