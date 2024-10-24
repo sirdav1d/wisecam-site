@@ -1,14 +1,13 @@
 /** @format */
 
-import { FaXTwitter } from 'react-icons/fa6';
-import logo from '@/assets/logo-wisecam.png';
+import logo from '@/assets/logo-wisecam-white.png';
+import Image from 'next/image';
 import {
 	BiLogoFacebookCircle,
 	BiLogoInstagram,
 	BiLogoLinkedinSquare,
 	BiLogoYoutube,
 } from 'react-icons/bi';
-import Image from 'next/image';
 
 type Links = {
 	title: string;

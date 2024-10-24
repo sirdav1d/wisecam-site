@@ -4,7 +4,6 @@ import { Contact1 } from '@/components/Contact1';
 import { CTA1 } from '@/components/CTA1';
 import { Feature351 } from '@/components/Feature351';
 import { Feature493 } from '@/components/Feature493';
-import { Footer4 } from '@/components/Footer4';
 import { HeaderHero82 } from '@/components/HeaderHero82';
 import { Navbar2 } from '@/components/Navbar2';
 import { fetchHygraph } from '@/lib/fetchHygraph';
@@ -16,7 +15,7 @@ export default async function Home() {
 	const data = response.homepages[0];
 	return (
 		<main className='mx-auto w-full overflow-x-hidden flex flex-col items-center justify-center bg-zinc-50'>
-			<div className='absolute w-full h-[95vh] top-0 mix-blend-darken bg-hero-pattern bg-bottom'></div>
+			<div className='absolute w-full h-screen top-0 mix-blend-darken bg-hero-pattern bg-cover md:bg-bottom'></div>
 			<Navbar2 />
 			<HeaderHero82
 				heading={data.headline}
@@ -47,7 +46,7 @@ export default async function Home() {
 
 			<Contact1
 				heading='Entre Em Contato'
-				description='Tem uma pergunta ou quer começar um projeto conosco? Não hesite em nos contatar. Estamos à disposição para atender suas necessidades'
+				description='Tem uma pergunta ou quer começar um projeto conosco? Estamos à disposição para atender suas necessidades'
 			/>
 		</main>
 	);

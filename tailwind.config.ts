@@ -3,6 +3,7 @@
 import type { Config } from 'tailwindcss';
 
 const config: Config = {
+	darkMode: ['class'],
 	content: [
 		'./src/pages/**/*.{js,ts,jsx,tsx,mdx}',
 		'./src/components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -15,7 +16,8 @@ const config: Config = {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
 				'gradient-conic':
 					'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-				'hero-pattern': "url('/heroImage.jpg')",
+				'hero-pattern': "url('/heroImage.png')",
+				'footer-pattern': "url('/logo-wisecam.png')",
 			},
 			boxShadow: {
 				'shadow-wpp':
@@ -23,12 +25,18 @@ const config: Config = {
 				'hero-btn':
 					'0px 36px 14px rgba(41, 84, 224, 0.04), 0px 20px 12px rgba(41, 84, 224, 0.13), 0px 9px 9px rgba(41, 84, 224, 0.21), 0px 2px 5px rgba(41, 84, 224, 0.25)',
 			},
+			borderRadius: {
+				lg: 'var(--radius)',
+				md: 'calc(var(--radius) - 2px)',
+				sm: 'calc(var(--radius) - 4px)',
+			},
+			colors: {},
 		},
 	},
 	presets: [
 		require('@relume_io/relume-tailwind'),
 		require('tailwindcss-animate'),
 	],
-	plugins: [],
+	plugins: [require('tailwindcss-animate')],
 };
 export default config;

@@ -5,6 +5,7 @@ import { Poppins } from 'next/font/google';
 import './globals.css';
 import { Navbar2 } from '@/components/Navbar2';
 import { Footer4 } from '@/components/Footer4';
+import { Toaster } from 'sonner';
 
 const poppins = Poppins({
 	subsets: ['latin'],
@@ -26,6 +27,7 @@ export default function RootLayout({
 	return (
 		<html lang='pt-BR'>
 			<body className={poppins.className}>
+				<Toaster position='top-center' />
 				{children}
 				<Footer4 />
 			</body>
