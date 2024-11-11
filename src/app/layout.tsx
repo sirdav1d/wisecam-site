@@ -6,6 +6,7 @@ import './globals.css';
 import { Navbar2 } from '@/components/Navbar2';
 import { Footer4 } from '@/components/Footer4';
 import { Toaster } from 'sonner';
+import WhatsappBtn from '@/components/whatsap-btn';
 
 const poppins = Poppins({
 	subsets: ['latin'],
@@ -26,8 +27,9 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang='pt-BR'>
-			<body className={poppins.className}>
+			<body className={`${poppins.className} relative`}>
 				<Toaster position='top-center' />
+				<WhatsappBtn />
 				{children}
 				<Footer4 />
 			</body>

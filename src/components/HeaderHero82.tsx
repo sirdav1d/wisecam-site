@@ -78,7 +78,7 @@ export const HeaderHero82 = (props: Header82Props) => {
 						className='bg-zinc-50/60 backdrop-blur-sm rounded-md h-fit w-fit pb-10 px-5'>
 						<h1 className='mb-5 text-4xl font-bold md:mb-6 md:text-6xl mt-20 2xl:mt-28'>
 							{heading}
-							<span className='lg:bg-gradient-to-r md:text-5xl from-blue-600 to-orange-600 px-4 rounded-lg 2xl:text-zinc-50'>
+							<span className='lg:bg-gradient-to-r md:text-5xl from-blue-600 to-orange-600 px-4 rounded-lg text-zinc-50'>
 								{headlinespan}
 							</span>
 						</h1>

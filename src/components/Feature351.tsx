@@ -109,19 +109,19 @@ const FeatureCard = ({
 				}}
 				transition={{ duration: 0.3, ease: 'easeInOut' }}>
 				<div className='flex h-full flex-col text-center px-6 pb-8 pt-4 md:px-10 md:pb-12 md:pt-12 lg:w-[40rem] 2xl:w-[48rem] lg:px-12 lg:py-8 justify-center items-center'>
-					<h3 className='mb-5 text-3xl font-bold leading-[1.2] md:mb-6 lg:text-4xl'>
+					<h3 className='mb-5 text-3xl font-bold leading-[1.2] '>
 						{feature.title}
 					</h3>
 					<p className='text-base max-w-lg text-center mx-auto'>
 						{feature.description}
 					</p>
-					<div className='mt-8 md:mt-10 lg:mt-12 rounded-md'>
+					<div className='mt-8 rounded-md'>
 						<Image
-							width={800}
-							height={400}
+							width={650}
+							height={200}
 							src={feature.image.url}
 							alt={feature.title}
-							className='object-cover rounded-md'
+							className='object-contain rounded-md'
 						/>
 					</div>
 				</div>

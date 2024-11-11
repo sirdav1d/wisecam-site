@@ -6,6 +6,7 @@ import { Feature351 } from '@/components/Feature351';
 import { Feature493 } from '@/components/Feature493';
 import { HeaderHero82 } from '@/components/HeaderHero82';
 import { Navbar2 } from '@/components/Navbar2';
+import WhatsappBtn from '@/components/whatsap-btn';
 import { fetchHygraph } from '@/lib/fetchHygraph';
 import { HomeQuery } from '@/lib/queries';
 import { HomeType } from '@/lib/types';
@@ -14,7 +15,7 @@ export default async function Home() {
 	const response: HomeType = await fetchHygraph(HomeQuery);
 	const data = response.homepages[0];
 	return (
-		<main className='mx-auto w-full overflow-x-hidden flex flex-col items-center justify-center bg-zinc-50'>
+		<main className='mx-auto w-full overflow-x-hidden flex flex-col items-center justify-center bg-zinc-50 relative'>
 			<div className='absolute w-full h-screen top-0 mix-blend-darken bg-hero-pattern bg-cover md:bg-bottom'></div>
 			<Navbar2 />
 			<HeaderHero82
