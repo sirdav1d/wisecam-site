@@ -86,9 +86,13 @@ export const HeaderHero82 = (props: Header82Props) => {
 							{description}
 						</p>
 						<div className='mt-6 flex md:items-center md:justify-center gap-x-4 md:mt-8 2xl:mt-12'>
-							<Button className='rounded-md text-xl shadow-hero-btn bg-blue-600 border-none text-zinc-50 hover:bg-blue-500 transition-all ease-linear duration-300'>
+							<a
+								className=' flex  items-center gap-3 py-2 px-4 rounded-md text-xl shadow-hero-btn bg-blue-600 border-none text-zinc-50 hover:bg-blue-500 transition-all ease-linear duration-200'
+								href='https://wa.me/+5519992666485?text=Olá,%20estava%20no%20site%20e%20gostaria%20de%20fazer%20um%20orçamento'
+								target='_blank'
+								rel='noopener noreferrer'>
 								Solicitar Orçamento <LuArrowUpRight size={32} />
-							</Button>
+							</a>
 						</div>
 					</motion.div>
 				</div>
